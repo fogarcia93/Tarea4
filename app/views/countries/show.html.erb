@@ -4,9 +4,12 @@
   <strong>Name:</strong>
   <%= @country.name %>
 </p>
+
 <ul>
 <% @country.cities.each do |city| %>
+<li>
 <%= city.cit %>
+</li>
 <% end %>
 </ul>
 
@@ -27,8 +30,9 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :country_id %>
-    <%= f.number_field :country_id %>
+
+    <%= f.number_field :country_id, value: @country.id, type: "hidden" %>
+   
   </div>
 
   <div class="field">
